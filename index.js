@@ -5,19 +5,20 @@ const WebSocket = require('ws');
 const port = process.argv[2] || 8000;
 const app = express();
 const server = http.createServer(app);
-app.use(express.static('public'));
 const wss = new WebSocket.Server({ server });
+
+app.use(express.static('public'));
 
 const connections = [];
 const state = { cats: 0, dogs: 0 }
 
-app.get('/vote/cats', (req, res) => {
+app.get('/vote/cats', (_req, res) => {
     console.log('A vote for 🐱');
     addVotes({ cats: 1 });
     res.sendStatus(200);
 });
 
-app.get('/vote/dogs', (req, res) => {
+app.get('/vote/dogs', (_req, res) => {
     console.log('A vote for 🐶');
     addVotes({ dogs: 1 });
     res.sendStatus(200);
