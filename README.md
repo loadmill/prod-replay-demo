@@ -14,3 +14,6 @@
  - Start recording incoming traffic to the demo app by running `sudo ./gor --input-raw :8000 --output-file ./requests_0.gor`
  - Stop the recording by pressing <kbd>Ctrl</kbd>+<kbd>C</kbd>
  - To replay the recording run `sudo ./gor --input-file ./requests_0.gor -output-http http://localhost:8000`
+ 
+## Track responses
+- If you wish to include responses in your recoding, run the recording with `--input-raw-track-response` like this: `sudo ./gor --input-raw-track-response --input-raw :3000 --output-file ./requests_0.gor`
