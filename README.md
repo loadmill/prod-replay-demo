@@ -16,4 +16,4 @@
  - To replay the recording run `sudo ./gor --input-file ./requests_0.gor -output-http http://localhost:8000`
  
 ## Track responses
-- If you wish to include responses in your recoding, run the recording with `--input-raw-track-response` like this: `sudo ./gor --input-raw-track-response --input-raw :3000 --output-file ./requests_0.gor`
+- If you wish to include responses in your recoding, run the recording with `--input-raw-track-response` like this: `sudo ./gor --input-raw :8000 --input-raw-track-response --input-raw-realip-header "X-Real-IP" --output-file ./requests_0.gor`
