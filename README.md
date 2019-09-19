@@ -8,6 +8,8 @@
  - Run another instance of the app on a different port using `node index.js 8001`
  - Install GoReplay locally by following [these simple Instructions](https://github.com/buger/goreplay/wiki/Getting-Started#installing-gor)
  - Replay traffic from the first instance of the app to the second one using GoReplay: `sudo ./gor --input-raw :8000 --output-http http://localhost:8001`
+
+![](public/gor_demo.gif)
  
 ## Record and replay traffic (save to file)
  - Run the demo using `node index.js 8000`
