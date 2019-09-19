@@ -10,7 +10,7 @@ const wss = new WebSocket.Server({ server });
 app.use(express.static('public'));
 
 const connections = [];
-const state = { cats: 0, dogs: 0 }
+const state = { cats: 0, dogs: 0 };
 
 app.get('/vote/cats', (_req, res) => {
     console.log('A vote for 🐱');
@@ -33,6 +33,6 @@ const addVotes = ({ cats = 0, dogs = 0 }) => {
     state.cats = state.cats + cats;
     state.dogs = state.dogs + dogs;
     connections.forEach(ws => ws.send(JSON.stringify(state)));
-}
+};
 
 server.listen(port, () => console.log(`Demo app listening on port ${port}!`));
